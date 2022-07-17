@@ -54,5 +54,9 @@ function monthlyCost(){
     let totalMonthly = Math.round(100*totalAnnual/12)/100;
     let el = $('#total-monthly');
     el.empty();
-    el.append(totalMonthly);
+    el.append('$'+ totalMonthly);
+
+    if(totalMonthly > 20000){
+        el.css('background-color', 'red');
+    }
 } // end monthlyCost
