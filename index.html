@@ -22,7 +22,7 @@
         <input type="text" placeholder="Last Name" id="last-name-input">
         <input type="text" placeholder="ID" id="id-input">
         <input type="text" placeholder="Title" id="title-input">
-        <input type="text" placeholder="Annual Salary" id="annual-salary-input">
+        <input type="number" placeholder="Annual Salary" id="annual-salary-input"><br />
         <button id="submit-button">SUBMIT</button>
     </div>
 
@@ -40,10 +40,26 @@
             </tr>
         </thead>
         <tbody id="emplyee-table">
+            <tr>
+                <td>${employee.firstName}</td>
+                <td>${employee.lastName}</td>
+                <td>${employee.id}</td>
+                <td>${employee.title}</td>
+                <td class="employee-salary">${employee.annualSalary}</td>
+                <td><button class="delete-button">DELETE</button>
+            </tr>
+            <tr>
+                <td>${employee.firstName}</td>
+                <td>${employee.lastName}</td>
+                <td>${employee.id}</td>
+                <td>${employee.title}</td>
+                <td class="employee-salary">${employee.annualSalary}</td>
+                <td><button class="delete-button">DELETE</button>
+            </tr>
         </tbody>
     </table>
 
-    <h2>Total Monthly:<span id="total-monthly"></span></h2>
+    <h2>Total Monthly:<span id="total-monthly">$0.00</span></h2>
 
 </body>
 </html>

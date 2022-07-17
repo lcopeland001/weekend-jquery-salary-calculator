@@ -13,7 +13,11 @@ let emplyeeInfo = [];
 
 function deleteButton(){
     console.log('in deleteButton');
-    $(this).parent().parent().remove();
+    let grandParent =$(this).parent().parent()
+    grandParent.remove();
+    grandParent.data(emplyeeInfo);
+    
+    console.log('this:', grandParent.data('.employee-salary'));
 } // end deleteButton
 
 function displayEmplyees(){
@@ -27,7 +31,7 @@ function displayEmplyees(){
         <td>${employee.lastName}</td>
         <td>${employee.id}</td>
         <td>${employee.title}</td>
-        <td>${employee.annualSalary}</td>
+        <td class="employee-salary">${employee.annualSalary}</td>
         <td><button class="delete-button">DELETE</button>
         </tr>
         `)
