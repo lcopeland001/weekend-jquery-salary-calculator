@@ -13,11 +13,11 @@ let emplyeeInfo = [];
 
 function deleteButton(){
     console.log('in deleteButton');
-    let grandParent =$(this).parent().parent()
-    grandParent.remove();
-    grandParent.data(emplyeeInfo);
-    
-    console.log('this:', grandParent.data('.employee-salary'));
+    let employeeToDelete = $('.delete-button').index(this);
+    emplyeeInfo.splice(employeeToDelete, 1);
+    displayEmplyees();
+    monthlyCost();
+   console.log(employeeToDelete);
 } // end deleteButton
 
 function displayEmplyees(){

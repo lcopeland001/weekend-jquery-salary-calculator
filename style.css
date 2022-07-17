@@ -4,27 +4,26 @@ header {
     border: none;
     padding: 12px 32px;
 }
-
-table {
-    border-collapse: collapse;
-    width: 50%;
-}
-
-td, th {
-    text-align: center;
-    padding: 15px;
-  }
-
 th {
     border: 1px solid;
+    width: 1000px;
   }
-
-  #submit-button {
+#submit-button {
     margin-top: 15px;
   }
-
-  div {
+div {
     width: 53px;
     white-space: nowrap;
     text-align: right;
+  }
+table {
+    border: 1px solid black;
+    table-layout: fixed;
+    width: 200px;
+    border-collapse: collapse;
+  }
+th,td {
+    border: 1px solid black;
+    width: 100px;
+    overflow: hidden;
   }
