@@ -4,7 +4,7 @@ $(document).ready(readyNow);
 
 function readyNow(){
  console.log('ready now');
- $('#submitButton').on('click', submitButton);
+ $('#submit-button').on('click', submitButton);
 } // end readyNow
 
 let emplyeeInfo = [];
@@ -12,13 +12,33 @@ let emplyeeInfo = [];
 function submitButton(){
     console.log('in submitButton');
     let employee = {
-        firstName: $('#firstNameInput').val(),
-        lastName:$('#lastNameInput').val(),
-        id: $('#idInput').val(),
-        title: $('#titleInput').val(),
-        annualSalary: $('#annualSalaryInput').val(),
+        firstName: $('#first-name-input').val(),
+        lastName:$('#last-name-input').val(),
+        id: $('#id-input').val(),
+        title: $('#title-input').val(),
+        annualSalary: $('#annual-salary-input').val(),
     };
     emplyeeInfo.push(employee);
+    $('#first-name-input').val('');
+    $('#last-name-input').val('');
+    $('#id-input').val('');
+    $('#title-input').val('');
+    $('#annual-salary-input').val('');
+    displayEmplyees();
 } // end submitButton
 
-
+function displayEmplyees(){
+    console.log('in displayEmplyees');
+    let el = $('#emplyee-table')
+    for (employee of emplyeeInfo){
+        el.append(`
+        <tr>
+        <td>${employee.firstName}</td>
+        <td>${employee.lastName}</td>
+        <td>${employee.id}</td>
+        <td>${employee.title}</td>
+        <td>${employee.annualSalary}</td>
+        </tr>
+        `)
+    }
+} // end displayEmplyees
