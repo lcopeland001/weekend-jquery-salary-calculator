@@ -25,12 +25,14 @@ function submitButton(){
     $('#title-input').val('');
     $('#annual-salary-input').val('');
     displayEmplyees();
+    monthlyCost(); 
 } // end submitButton
 
 function displayEmplyees(){
     console.log('in displayEmplyees');
     let el = $('#emplyee-table')
-    for (employee of emplyeeInfo){
+    el.empty();
+    for (let employee of emplyeeInfo){
         el.append(`
         <tr>
         <td>${employee.firstName}</td>
@@ -42,3 +44,15 @@ function displayEmplyees(){
         `)
     }
 } // end displayEmplyees
+
+function monthlyCost(){
+    console.log('in monthlyCost');
+    let totalAnnual = 0;
+    for (let i = 0; i < emplyeeInfo.length; i++) {
+       totalAnnual += Number(emplyeeInfo[i].annualSalary);
+    }
+    let totalMonthly = Math.round(100*totalAnnual/12)/100;
+    let el = $('#total-monthly');
+    el.empty();
+    el.append(totalMonthly);
+} // end monthlyCost
