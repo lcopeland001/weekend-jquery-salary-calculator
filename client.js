@@ -5,28 +5,16 @@ $(document).ready(readyNow);
 function readyNow(){
  console.log('ready now');
  $('#submit-button').on('click', submitButton);
+ // event delegation
+ $('body').on('click', '.delete-button', deleteButton)
 } // end readyNow
 
 let emplyeeInfo = [];
 
-function submitButton(){
-    console.log('in submitButton');
-    let employee = {
-        firstName: $('#first-name-input').val(),
-        lastName:$('#last-name-input').val(),
-        id: $('#id-input').val(),
-        title: $('#title-input').val(),
-        annualSalary: $('#annual-salary-input').val(),
-    };
-    emplyeeInfo.push(employee);
-    $('#first-name-input').val('');
-    $('#last-name-input').val('');
-    $('#id-input').val('');
-    $('#title-input').val('');
-    $('#annual-salary-input').val('');
-    displayEmplyees();
-    monthlyCost(); 
-} // end submitButton
+function deleteButton(){
+    console.log('in deleteButton');
+    $(this).parent().parent().remove();
+} // end deleteButton
 
 function displayEmplyees(){
     console.log('in displayEmplyees');
@@ -40,6 +28,7 @@ function displayEmplyees(){
         <td>${employee.id}</td>
         <td>${employee.title}</td>
         <td>${employee.annualSalary}</td>
+        <td><button class="delete-button">DELETE</button>
         </tr>
         `)
     }
@@ -60,3 +49,22 @@ function monthlyCost(){
         el.css('background-color', 'red');
     }
 } // end monthlyCost
+
+function submitButton(){
+    console.log('in submitButton');
+    let employee = {
+        firstName: $('#first-name-input').val(),
+        lastName:$('#last-name-input').val(),
+        id: $('#id-input').val(),
+        title: $('#title-input').val(),
+        annualSalary: $('#annual-salary-input').val(),
+    };
+    emplyeeInfo.push(employee);
+    $('#first-name-input').val('');
+    $('#last-name-input').val('');
+    $('#id-input').val('');
+    $('#title-input').val('');
+    $('#annual-salary-input').val('');
+    displayEmplyees();
+    monthlyCost(); 
+} // end submitButton

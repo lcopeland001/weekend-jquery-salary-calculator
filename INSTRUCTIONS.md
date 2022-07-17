@@ -18,7 +18,7 @@ to do:
 [x] Using the stored information, calculate monthly costs and append this to the to DOM. 
 [x] If the total monthly cost exceeds $20,000, add a red background color to the total monthly cost.
 
-Create a delete button that removes an employee from the DOM. For Base mode, it does **not** need to remove that Employee's salary from the reported total.
+[x]Create a delete button that removes an employee from the DOM. For Base mode, it does **not** need to remove that Employee's salary from the reported total.
 
 ### Files Provided
 No files have been provided (just instructions.md and a readme.md). Instead of forking and cloning this repo, please choose "Use This Template" (green button) and name your new repo "weekend-jquery-salary-calculator" and clone down from there. Make sure to commit regularily!
